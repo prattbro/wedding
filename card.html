@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============ SPLASH / LANDING SCREEN ============ -->
+  <div class="splash-screen" id="splashScreen">
+    <!-- Left Curtain -->
+    <div class="curtain curtain-left"></div>
+    <!-- Right Curtain -->
+    <div class="curtain curtain-right"></div>
+
+    <!-- Center Content -->
+    <div class="splash-content" id="splashContent">
+      <!-- Ganpati Ji Photo -->
+      <div class="ganpati-container">
+        <img src="ganesha.jpg" alt="Shri Ganesh Ji" class="ganpati-img" />
+      </div>
+
+      <p class="ganpati-mantra">॥ श्री गणेशाय नमः ॥</p>
+
+      <h1 class="splash-title">Wedding Invitation</h1>
+
+      <!-- Decorative Knot -->
+      <div class="knot-container" id="knotBtn">
+        <svg class="knot-svg" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ribbon left -->
+          <path d="M10 65 C20 40, 35 30, 50 38 C55 40, 55 45, 50 48 C40 52, 25 50, 15 70" fill="none" stroke="#c97b7b" stroke-width="3" stroke-linecap="round"/>
+          <!-- Ribbon right -->
+          <path d="M110 65 C100 40, 85 30, 70 38 C65 40, 65 45, 70 48 C80 52, 95 50, 105 70" fill="none" stroke="#c97b7b" stroke-width="3" stroke-linecap="round"/>
+          <!-- Center knot -->
+          <circle cx="60" cy="42" r="10" fill="#c97b7b" opacity="0.2" stroke="#c97b7b" stroke-width="2.5"/>
+          <!-- Ribbon tails -->
+          <path d="M15 70 C12 78, 8 80, 5 78" fill="none" stroke="#c97b7b" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M18 68 C16 76, 18 80, 22 78" fill="none" stroke="#c97b7b" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M105 70 C108 78, 112 80, 115 78" fill="none" stroke="#c97b7b" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M102 68 C104 76, 102 80, 98 78" fill="none" stroke="#c97b7b" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Bow loops -->
+          <path d="M50 38 C42 22, 30 18, 28 30 C27 36, 35 42, 50 38" fill="#c97b7b" opacity="0.12" stroke="#c97b7b" stroke-width="2"/>
+          <path d="M70 38 C78 22, 90 18, 92 30 C93 36, 85 42, 70 38" fill="#c97b7b" opacity="0.12" stroke="#c97b7b" stroke-width="2"/>
+        </svg>
+        <span class="click-hint">~ Click to Open ~</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Particles Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Falling Rose Petals -->
+  <div class="rose-container" id="roseContainer"></div>
+
+  <!-- Background Music Toggle -->
+  <button class="music-toggle" id="musicToggle" title="Toggle Music">
+    <span class="music-icon" id="musicIcon">🔇</span>
+  </button>
+  <audio id="bgMusic" loop preload="auto">
+    <!-- Replace the src below with your flute music file path -->
+    <source src="flute.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-subtitle reveal fade-down">Together with their families</p>
+      <h1 class="hero-title reveal fade-up">
+        <span class="name bride-name">Shatakshi</span>
+        <span class="ampersand">&amp;</span>
+        <span class="name groom-name">Nikhil</span>
+      </h1>
+      <p class="hero-tagline reveal fade-up delay-1">Request the pleasure of your company</p>
+      <div class="scroll-indicator reveal fade-up delay-2">
+        <span>Scroll Down</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SAVE THE DATE ============ -->
+  <section class="section save-the-date" id="save-the-date">
+    <div class="section-inner">
+      <div class="ornament reveal fade-up">&#10053;</div>
+      <h2 class="section-title reveal fade-up">Save the Date</h2>
+      <div class="date-display reveal zoom-in delay-1">
+        <div class="date-part">
+          <span class="date-number">Nov</span>
+          <span class="date-label">Month</span>
+        </div>
+        <div class="date-divider"></div>
+        <div class="date-part">
+          <span class="date-number">30</span>
+          <span class="date-label">Day</span>
+        </div>
+        <div class="date-divider"></div>
+        <div class="date-part">
+          <span class="date-number">2026</span>
+          <span class="date-label">Year</span>
+        </div>
+      </div>
+      <p class="countdown-text reveal fade-up delay-2">Days until we say "I do"</p>
+      <div class="countdown reveal fade-up delay-2" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">000</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COUPLE SECTION ============ -->
+  <section class="section couple-section" id="couple">
+    <div class="section-inner">
+      <h2 class="section-title reveal fade-up">The Happy Couple</h2>
+      <div class="couple-grid">
+        <div class="couple-card reveal slide-right">
+          <div class="couple-photo-frame">
+            <img src="bulbul.jpg" alt="Bride, Shatakshi (Bulbul)" class="couple-photo bride-photo" />
+          </div>
+          <h3 class="couple-name">Shatakshi (Bulbul)</h3>
+          <p class="couple-desc">Daughter of<br/>Smt. Anita Sharma &amp; Sh. D.K Sharma</p>
+        </div>
+        <div class="couple-heart reveal zoom-in delay-1">
+          <svg viewBox="0 0 100 100" class="heart-svg">
+            <path d="M50 88 C25 65, 0 50, 0 30 C0 12, 15 0, 30 0 C40 0, 48 8, 50 15 C52 8, 60 0, 70 0 C85 0, 100 12, 100 30 C100 50, 75 65, 50 88Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="couple-card reveal slide-left">
+          <div class="couple-photo-frame">
+            <img src="nikhil.png" alt="Groom, Nikhil" class="couple-photo" />
+          </div>
+          <h3 class="couple-name">Nikhil</h3>
+          <p class="couple-desc">Son of<br/>Smt. Geeta Prasad &amp; Sh. Dinesh Prasad</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENT DETAILS ============ -->
+  <section class="section events-section" id="events">
+    <div class="section-inner">
+      <h2 class="section-title reveal fade-up">Wedding Event</h2>
+      <div class="events-grid">
+        <div class="event-card reveal fade-up delay-1">
+          <div class="event-icon">💍</div>
+          <h3 class="event-name">The Wedding</h3>
+          <div class="event-detail">
+            <span class="event-label">Date &amp; Time</span>
+            <p>Monday, November 30, 2026 &bull; 8:00 PM</p>
+          </div>
+          <div class="event-detail">
+            <span class="event-label">Venue</span>
+            <p>Hollywood Dreams<br/>Sector 4, Vaishali<br/>Ghaziabad, Uttar Pradesh 201019</p>
+            <a class="venue-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Hollywood+Dreams%2C+Sector+4%2C+Vaishali%2C+Ghaziabad%2C+Uttar+Pradesh+201019" target="_blank" rel="noopener noreferrer">View venue on Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RSVP SECTION ============ -->
+  <section class="section rsvp-section" id="rsvp">
+    <div class="section-inner">
+      <h2 class="section-title reveal fade-up">RSVP</h2>
+      <p class="rsvp-subtitle reveal fade-up delay-1">Kindly respond by November 20, 2026</p>
+      <form class="rsvp-form reveal fade-up delay-2" id="rsvpForm">
+        <div class="form-group">
+          <input type="text" id="guestName" placeholder="Your Full Name" required />
+        </div>
+        <div class="form-group">
+          <select id="attendance" required>
+            <option value="" disabled selected>Will you attend?</option>
+            <option value="yes">Joyfully Accepts</option>
+            <option value="no">Regretfully Declines</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="number" id="guests" placeholder="Number of Guests" min="1" max="10" />
+        </div>
+        <div class="form-group">
+          <textarea id="message" placeholder="Leave a message for the couple..." rows="4"></textarea>
+        </div>
+        <button type="submit" class="rsvp-btn">Send RSVP</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ QUOTE / CLOSING ============ -->
+  <section class="section quote-section" id="quote">
+    <div class="section-inner">
+      <div class="quote-content reveal zoom-in">
+        <svg class="quote-mark" viewBox="0 0 50 50" width="40" height="40">
+          <text x="0" y="42" font-size="50" fill="currentColor">&ldquo;</text>
+        </svg>
+        <blockquote>
+          Whatever our souls are made of, his and mine are the same.
+        </blockquote>
+        <cite>— Emily Brontë</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-content reveal fade-up">
+      <p class="footer-names">Shatakshi &amp; Nikhil</p>
+      <p class="footer-date">November 30, 2026</p>
+      <p class="footer-hashtag">#ShatakshiWedsNikhil</p>
+      <div class="footer-hearts">
+        ♥ ♥ ♥
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
